@@ -1,40 +1,27 @@
-<h1 align="center">🚀 Aprendendo Go</h1>
+![Gopher no modo foco](gifs/0_NCKH5j7mncvMVBcR.gif)
+## Sobre este repositório
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/golang-samples/gopher-vector/master/gopher.png" width="200"/>
-</p>
+Esse repositório é a minha jornada real no Go: do zero até me tornar referência na linguagem.
 
-<p align="center">
-  <strong>Learning Go until I’m the go-to guy.</strong>
-</p>
+Ainda estou organizando os próximos passos, mas uma coisa está definida: vou longe. Cada commit aqui é parte do caminho para transformar estudo em resultado.
 
----
+## Objetivo
 
-## 📌 Sobre o projeto
+Meu objetivo é chegar em uma Big Tech com stack principal em Go.
 
-Este repositório é minha jornada prática aprendendo **Golang**.  
-Aqui você vai encontrar desde fundamentos até aplicações mais completas, tudo construído passo a passo.
+Vou focar 100% em Go, estudar com consistência e evoluir até dominar.
 
-A ideia não é só estudar… é **virar o cara que resolve com Go**.
+## Stack principal
 
----
+- Go
 
-## 🛠️ Tecnologias
+## Gopher vibes
 
-- Go (Golang)
-- Docker
-- APIs REST
-- Arquitetura backend
+![Gopher em ação](gifs/go.gif)
 
----
+## Roadmap (em construção)
 
-## 📂 Estrutura
 
-```bash
-.
-├── handlers/
-├── routes/
-├── services/
-├── Dockerfile
-└── main.go
+
+## Livros e materiais (em construção)
 
