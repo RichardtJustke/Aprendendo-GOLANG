@@ -305,21 +305,26 @@ body {
   </div>
 
   <div class="section-label">onde você chega</div>
+  <div class="milestones" style="grid-template-columns: 1fr; margin-bottom: 16px;">
+    <div class="ms" style="background: linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(59,130,246,0.15) 100%); border: 2px solid rgba(34,197,94,0.3);">
+      <div class="ms-role" style="font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #86efac;">🎯 SEU OBJETIVO</div>
+      <div class="ms-sal" style="font-size: 28px; background: linear-gradient(to right, #86efac, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">US$ 50k+</div>
+      <div class="ms-desc" style="color: #9998a8; line-height: 1.6;">Engenheiro sênior em Big Tech. Você vai chegar lá. Cada linha de código, cada projeto, cada falha — tudo é progresso. Foco total, sem desvio. Esse é o caminho.</div>
+    </div>
+  </div>
+
   <div class="milestones">
     <div class="ms ms-blue">
-      <div class="ms-time">12–18 meses</div>
       <div class="ms-role">Júnior / Pleno</div>
       <div class="ms-sal">R$ 8–15k</div>
       <div class="ms-desc">empresa boa, produto real, Go no ar</div>
     </div>
     <div class="ms ms-amber">
-      <div class="ms-time">24–30 meses</div>
       <div class="ms-role">Sênior</div>
       <div class="ms-sal">R$ 18–28k</div>
       <div class="ms-desc">sistemas distribuídos, lidera decisões técnicas</div>
     </div>
     <div class="ms ms-red">
-      <div class="ms-time">36+ meses</div>
       <div class="ms-role">Big Tech / Staff</div>
       <div class="ms-sal">R$ 35k+</div>
       <div class="ms-desc">escala real, system design, contribuição open source</div>
@@ -354,6 +359,8 @@ const DATA = [
     leet:'Easy — arrays, strings, hash maps. 2-3x por semana. Foco em entender, não em velocidade.',
     integ:'nenhuma ainda — foco total em fundação',
     marco:'você consegue explicar o que acontece quando digita uma URL e aperta Enter',
+    conceitos:['Sistema de arquivos (inode, permissões, hard/soft links)', 'Processos e threads (PID, context switch, sinais)', 'Memória (heap, stack, ponteiros, alocação)', 'Rede (TCP/IP, HTTP/1.1, DNS, sockets)', 'Estruturas de dados (array, linked list, stack, queue, hash map, árvore binária)', 'Algoritmos de ordenação (bubble, merge, quick sort)', 'Complexidade algorítmica (O(n), big O)'],
+    atividades:['Listar processos em /proc e explicar: PID, VSZ, RSS, estado, why – entender o que o SO expõe de cada processo', 'Implementar insertion sort e merge sort do zero, depois quicksort – medir tempo de execução com cada uma em array de 10k elementos', 'Fazer requisição HTTP GET manual via netcat (sem curl) – entender headers, status, resposta, por que precisa de \\r\\n', 'Criar arquivo binário, escrever structs, ler com seek – validar offset correto, cálculo de posição', 'Implementar linked list do zero (insert, remove, search) – testar com valores duplicados, vazias, single node', 'Comparar tempo real: bubble vs merge vs quick em array 1k, 10k, 100k – plotar ou logar resultado, validar complexidade na prática'],
     proj:[
       {n:'ambiente Linux do zero',      d:'configura seu setup: terminal, zsh, dotfiles versionados no GitHub, aliases e scripts úteis', w:'aprende Git de verdade, não só git push', t:['linux','git','bash','dotfiles']},
       {n:'estruturas de dados na raça', d:'linked list, stack, queue, hash map e árvore binária implementados do zero em Go',           w:'entende por que Go usa slice e não array na maioria dos casos', t:['Go','structs','ponteiros','generics']},
@@ -369,6 +376,8 @@ const DATA = [
     leet:'Easy/Medium — sliding window, two pointers, maps. Foco em escrever Go idiomático.',
     integ:'Go puro — sem framework, sem ORM, sem magia',
     marco:'você escreve qualquer lógica em Go sem precisar pesquisar sintaxe',
+    conceitos:['Tipos básicos, zero values e casting', 'Funções (receivers, defer, panic/recover)', 'Interfaces e duck typing', 'Goroutines e channels', 'Mutex e sync primitives (RWMutex, WaitGroup, Cond)', 'Generics (type parameters)', 'Reflection e struct tags', 'Context para cancelamento e timeout'],
+    atividades:['Implementar io.Reader e io.Writer manualmente – entender como Go abstrai I/O com interfaces', 'Criar 3 goroutines que enviam números por channel, ler e somar – testar com buffer vs unbuffered', 'Replicar race condition com shared variable, depois fix com RWMutex – rodar com -race flag e validar', 'Escrever função genérica Map que funciona com []int, []string, []struct – usar constraints', 'Usar reflection para converter struct em map[string]interface{} – testar com diferentes tipos de field', 'Escrever função que faz defer, panic, e recover – testar cenário que dispara panic e validar recover', 'Cancelar 10 goroutines via context.WithCancel – medir tempo até todas terminarem'],
     proj:[
       {n:'HTTP server sem framework',       d:'roteador, middleware chain, path params, JSON response — zero dependência externa',               w:'entende o que Express, Gin e Chi fazem por baixo', t:['net/http','interfaces','middleware','context']},
       {n:'grep clone',                      d:'busca recursiva com regex, suporte a -r, -i, -n e cores no terminal',                            w:'domina o filesystem, regex e como ferramentas Unix funcionam', t:['regexp','filepath','os','bufio']},
@@ -384,6 +393,8 @@ const DATA = [
     leet:'Medium — trees, graphs, dynamic programming básico. 4x por semana.',
     integ:'Go backend ↔ PostgreSQL ↔ TypeScript frontend',
     marco:'você tem uma API em produção que o TypeScript consome',
+    conceitos:['SQL (DDL/DML, joins, indexes, transactions, constraints)', 'Database drivers e conexão pooling', 'REST API design (status codes, headers, idempotência)', 'JWT e autenticação/autorização', 'Hashing (bcrypt) e criptografia', 'Middleware chain e dependency injection', 'JSON marshaling/unmarshaling', 'Testing (unit tests, mocks, test fixtures)', 'TypeScript básico (tipos, interfaces, async/await)'],
+    atividades:['Criar schema PostgreSQL com foreign keys, check constraints, unique – testar inserção inválida e validar erro', 'Executar SELECT com JOIN entre 3 tabelas, depois criar INDEX – medir diferença de tempo com/sem index via EXPLAIN', 'Implementar middleware de logging que registra method, path, duration – testar com http.ResponseWriter interceptado', 'Implementar login com JWT + refresh token – validar expiração, refresh logic, rejection de token inválido', 'Hash senha com bcrypt (10+ rounds) e depois validar em login – testar senha correta vs errada', 'Escrever 3 testes de integração (setup DB, insert, query, teardown) – usar testcontainers se possível', 'Consumir a API Go de TypeScript com fetch, parse response, exibir erro – garantir tipos corretos', 'Testar transação que faz INSERT, depois ROLLBACK – validar que dados não persistem'],
     proj:[
       {n:'API de autenticação completa',    d:'registro, login, JWT com refresh tokens, blacklist no Redis, roles e permissões',                w:'entende o que acontece quando você faz login em qualquer app', t:['JWT','bcrypt','PostgreSQL','Redis']},
       {n:'schema de banco com migrations',  d:'modelagem relacional real: usuários, posts, comentários, tags — sem ORM, SQL puro',              w:'SQL de verdade, constraints, índices e por que importam na escala', t:['PostgreSQL','SQL','migrate','transactions']},
@@ -399,6 +410,8 @@ const DATA = [
     leet:'Medium/Hard — heap, trie, graph traversal. 4-5x por semana.',
     integ:'Go com profiling real — aprende a medir antes de otimizar',
     marco:'você encontra um gargalo numa API real usando pprof e resolve',
+    conceitos:['CPU profiling (flame graphs, hot paths)', 'Memory profiling (heap, GC pressure, leaks)', 'Tracing distribuído (trace tool)', 'Benchmarking Go (testing.B, comparação de alocações)', 'Garbage collector (mark-and-sweep, GC tuning)', 'Cache patterns (locality, hit ratio, TTL)', 'Backpressure e rate limiting', 'WebSocket protocol', 'B-tree estrutura e WAL (Write-Ahead Logging)'],
+    atividades:['Rodar pprof em uma função N-heavy (loop, aloc), gerar flame graph – identificar exata linha mais lenta', 'Comparar heap antes/depois de otimização (menos alloc, pool de buffers) – validar diferença em bytes/allocs', 'Usar go tool trace para visualizar goroutines, GC pauses, syscalls – entender timeline de execução', 'Escrever 3 versões da mesma função (naive, otimizada, pool) – benchmark com B.ReportMetric para comparar', 'Medir GC pause antes/depois de GOGC tuning – logar via runtime.ReadMemStats a cada coleta', 'Implementar LRU cache com hit/miss counter – atingir +80% hit rate em teste com padrão de acesso', 'Implementar rate limiter e testar backpressure: enviar 1000 requests, validar que fila não explode', 'Escrever WebSocket echo server com rooms – cliente conecta, envia msg, broadcast para room, desconecta gracefully', 'Implementar mini B-tree insert/search – validar que mantém ordem, não duplica, e busca é rápida'],
     proj:[
       {n:'profiling com pprof',           d:'API intencionalmente lenta → identificar gargalo com pprof → corrigir → medir resultado',        w:'como big techs debugam performance em produção', t:['pprof','trace','benchmark','flamegraph']},
       {n:'connection pool do zero',       d:'pool de conexões TCP reutilizáveis — sem biblioteca, conta ativa, timeout, retry',               w:'entende o que database/sql pool faz e por que é crítico em escala', t:['sync','net','context','atomic']},
@@ -414,6 +427,8 @@ const DATA = [
     leet:'Hard + System Design prep. Mock interviews semanais.',
     integ:'Go services ↔ gRPC ↔ TypeScript client ↔ Kafka ↔ PostgreSQL',
     marco:'você projeta um sistema para 1 milhão de usuários e explica cada decisão',
+    conceitos:['gRPC e protocol buffers', 'Message queues (Kafka, pub/sub)', 'Idempotência e deduplicação', 'Dead letter queues (DLQ)', 'Distributed transactions (saga pattern)', 'Circuit breaker e retry policies', 'Service discovery e load balancing', 'Eventual consistency vs strong consistency', 'Event sourcing e CQRS', 'CAP theorem'],
+    atividades:['Definir .proto de User service (create, get, list), gerar stubs – chamar de cliente Go e validar resposta', 'Kafka producer/consumer em Go – enviar 1k msgs, perder conexão, validar que reprocessa com retry', 'Implementar idempotência com DB unique constraint + request ID – enviar msg duplicate, validar que ignora second', 'Usar DLQ: enviar msg que falha processing 3x, enviar pra DLQ, investigar depois', 'Implementar saga padrão (create user → charge card → activate) – teste rollback no passo 2', 'Implementar circuit breaker (3 falhas = abrir) – testar: falhas, abertura, half-open, recuperação', 'Discutir CAP theorem: Partition vs Consistency vs Availability – escolher 2 de 3 em 3 cenários diferentes', 'Event store: salvar todos eventos (UserCreated, UserUpdated) – rebuild estado atual do usuário a partir dos eventos', 'Mock interview 30min: design sistema para pagamentos distribuído – explicar onde usa idempotência, saga, etc'],
     proj:[
       {n:'microserviço com gRPC',         d:'serviço de usuários em Go via gRPC — client TypeScript via grpc-web',                           w:'como big techs comunicam serviços internos — mais rápido que REST, tipado', t:['gRPC','protobuf','Go','TypeScript']},
       {n:'cache em camadas',              d:'L1 in-memory (LRU) + L2 Redis + invalidação por evento — com métricas de hit rate',             w:'cache como arquitetura, não só "bota no Redis"', t:['Redis','goroutines','channels','cache patterns']},
@@ -429,6 +444,8 @@ const DATA = [
     leet:'Hard + system design semanal + mock interview real.',
     integ:'stack completa: Go + TS + PG + Kafka + K8s + OpenTelemetry',
     marco:'você passa numa entrevista técnica de empresa grande',
+    conceitos:['Kubernetes (deployments, services, ingress, statefulsets)', 'Helm charts e GitOps', 'OpenTelemetry (traces, metrics, logs)', 'Jaeger para observabilidade distribuída', 'Prometheus e Grafana', 'Service mesh (Istio basics)', 'Multi-region deployment', 'Security (TLS, RBAC, secrets management)', 'Infrastructure as Code (Terraform)', 'System design patterns (sharding, partitioning, consensus)'],
+    atividades:['Deploy app com 3 replicas em K8s, service, ingress – scale para 6, depois 2, validar pods distribuição', 'Setup HTTPS com cert-manager, ingress rules – testar que http redireciona para https', 'Instrumentar app com OpenTelemetry: traces, spans, baggage – enviar pra Jaeger', 'Correlacionar trace entre 3 serviços (auth → api → db) – validar que baggage passa entre eles', 'Criar Grafana dashboard: CPU, memory, latency p99 – alertar se CPU > 80% por 5min', 'Escrever Helm chart funcional, deploy com `helm install` – depois upgrade, rollback, validar', 'HPA: scale app baseado em CPU – gerar carga, validar que escala, depois diminui', 'Mock interview 1h: design Twitter – discutir sharding strategy, replication, failover, caching', 'Documentar arquitetura: 1M users, 10k RPS, 99.9% uptime – desenhar diagrama, explicar decisões', 'Abrir PR real em projeto Go OSS – estudar código, fix um bug ou feature pequeno, passar review'],
     proj:[
       {n:'deploy com Kubernetes',         d:'app com múltiplos serviços: HPA, rolling update, ConfigMap, secrets, liveness probe',           w:'como código vai do repositório para produção em empresa grande', t:['Kubernetes','Docker','Helm','CI/CD']},
       {n:'observabilidade OpenTelemetry', d:'traces distribuídos atravessando 3 serviços Go — Jaeger pra visualizar, alertas no Grafana',    w:'como big techs debugam o que deu errado em produção', t:['OpenTelemetry','Jaeger','Prometheus','Grafana']},
@@ -456,7 +473,6 @@ DATA.forEach((p, i) => {
     <div class="ps">${p.sub}</div>
   </div>
   <div class="ph-right">
-    <span class="yr ${y}">${yl}</span>
     <div class="mo">${p.mo}</div>
     <div class="chev">▶</div>
   </div>
@@ -471,8 +487,14 @@ DATA.forEach((p, i) => {
       <div class="info-lbl">integração</div>
       <div class="info-val">${p.integ}</div>
     </div>
+  </div>  <div class="pb-label" style="margin-top:18px">conceitos a dominar</div>
+  <div style="font-size: 12px; color: var(--text2); line-height: 1.6;">
+    ${p.conceitos.map(c => `<div style="padding: 4px 0; padding-left: 8px; border-left: 2px solid var(--border); ">• ${c}</div>`).join('')}
   </div>
-  <div class="pb-label" style="margin-top:18px">projetos</div>
+  <div class="pb-label">atividades para validar</div>
+  <div style="font-size: 12px; color: var(--text2); line-height: 1.6;">
+    ${p.atividades.map(a => `<div style="padding: 4px 0; padding-left: 8px; border-left: 2px solid var(--border); ">✓ ${a}</div>`).join('')}
+  </div>  <div class="pb-label" style="margin-top:18px">projetos</div>
   <div>
     ${p.proj.map((r, j) => `
     <div class="proj">
